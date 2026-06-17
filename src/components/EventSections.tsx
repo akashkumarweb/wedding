@@ -15,7 +15,7 @@ export function EventCardsGrid() {
 
       <SectionHeading
         title="The Festivities"
-        subtitle="A Pinterest-style guide to each ceremony, filled with Hindu wedding rituals, warm colour, and handcrafted details."
+        subtitle="Three sacred celebrations, each marking a beautiful step toward Akash and Madhavi's wedding day."
         hindi="उत्सव"
         dividerLabel="3 — 5 July 2026"
       />
