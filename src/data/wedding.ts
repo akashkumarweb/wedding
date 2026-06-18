@@ -87,7 +87,7 @@ export const events: WeddingEvent[] = [
     title: 'Wedding',
     titleHindi: 'विवाह',
     subtitle: 'Akash & Madhavi unite in matrimony',
-    time: 'Ceremony — muhurat TBA',
+    time: 'Baraat 7:00 PM · Dinner 8:30–11:30 PM · Phera 1:00 AM',
     venue: 'PSR Convention Center',
     dressNote: 'Indian formal / traditional attire',
     backgroundImage: '/assets/boho-wedding.jpg',

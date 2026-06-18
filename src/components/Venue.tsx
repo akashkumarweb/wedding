@@ -16,7 +16,11 @@ const venueCards = [
   {
     eyebrow: 'Wedding',
     venue: weddingVenue,
-    schedule: [['Vivah', '5 July 2026 · Muhurat TBA']],
+    schedule: [
+      ['Baraat', '5 July 2026 · 7:00 PM from Pushpanil Bhavan / home'],
+      ['Pre-reception & Dinner', '5 July 2026 · 8:30 PM to 11:30 PM'],
+      ['Phera / Muhurat', '6 July 2026 · 1:00 AM'],
+    ],
   },
 ] as const
 
