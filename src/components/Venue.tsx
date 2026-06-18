@@ -28,27 +28,45 @@ export function Venue() {
   return (
     <Section
       id="venue"
-      className="relative overflow-hidden bg-maroon py-24 text-ivory md:py-32"
+      className="relative scroll-mt-28 overflow-hidden bg-maroon py-24 text-ivory md:scroll-mt-32 md:py-32"
     >
       <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(52,23,22,0.92),rgba(98,38,38,0.88)),url('/assets/boho-hero.jpg')] bg-cover bg-center" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(219,203,151,0.2),transparent_58%)]" />
       <div className="absolute top-10 left-[7%] hidden h-48 w-48 rounded-full border border-gold/20 md:block float-soft" />
       <div className="absolute right-[8%] bottom-10 hidden h-28 w-28 rotate-45 border border-champagne/20 md:block float-soft-delayed" />
-
-      <SectionHeading
-        title="Venue"
-        subtitle="Exact Google locations for each celebration"
-        hindi="स्थान"
-        light
-        dividerLabel="Ceremony locations"
+      <motion.div
+        aria-hidden="true"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+        className="pointer-events-none absolute top-28 right-8 z-0 h-20 w-px bg-gradient-to-b from-transparent via-gold/45 to-transparent md:right-[18%]"
       />
+      <motion.div
+        aria-hidden="true"
+        initial={{ opacity: 0, scale: 0.85 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.15, duration: 1 }}
+        className="pointer-events-none absolute bottom-28 left-8 z-0 h-16 w-16 rounded-full border border-champagne/20 md:left-[14%]"
+      />
+
+      <div className="relative z-10">
+        <SectionHeading
+          title="Venue"
+          subtitle="Exact Google locations for each celebration"
+          hindi="स्थान"
+          light
+          dividerLabel="Ceremony locations"
+        />
+      </div>
 
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-        className="relative mt-14 grid gap-8 lg:grid-cols-2"
+        className="relative z-10 mt-14 grid gap-8 lg:grid-cols-2"
       >
         {venueCards.map((item, index) => (
           <motion.article
