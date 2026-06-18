@@ -38,7 +38,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="font-body mt-3 inline-flex text-[0.65rem] tracking-[0.24em] text-gold-light uppercase transition hover:text-ivory"
               >
-                Directions
+                See on Google Map
               </a>
             </div>
             <div className="border-t border-gold/20 pt-5">
@@ -50,7 +50,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="font-body mt-3 inline-flex text-[0.65rem] tracking-[0.24em] text-gold-light uppercase transition hover:text-ivory"
               >
-                Directions
+                See on Google Map
               </a>
             </div>
           </div>

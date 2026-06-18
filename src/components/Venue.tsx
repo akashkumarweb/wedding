@@ -90,7 +90,7 @@ export function Venue() {
                 rel="noopener noreferrer"
                 className="font-body mt-6 inline-flex rounded-full bg-maroon px-6 py-3 text-[0.68rem] tracking-[0.24em] text-ivory uppercase transition-all hover:bg-maroon-dark hover:shadow-[0_16px_35px_rgba(98,38,38,0.25)]"
               >
-                Open in Google Maps
+                See on Google Map
               </a>
             </div>
 

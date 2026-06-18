@@ -29,9 +29,11 @@ export const venue = {
 
 export const weddingVenue = {
   name: 'PSR Convention Center',
-  address: 'PSR Convention Center',
+  address:
+    'GFHQ+733, Kompally, NH 44, Opposite Asian Cineplanet Multiplex, Secunderabad, Telangana 500100, India',
   note: 'Wedding ceremony venue',
-  mapEmbed: 'https://www.google.com/maps?q=PSR%20Convention%20Center&output=embed',
+  mapEmbed:
+    'https://www.google.com/maps?q=GFHQ%2B733%2C%20Kompally%2C%20NH%2044%2C%20Opposite%20Asian%20Cineplanet%20Multiplex%2C%20Secunderabad%2C%20Telangana%20500100%2C%20India&output=embed',
   directionsUrl: 'https://maps.app.goo.gl/ATXJBVmCEDTHLDDM9',
 }
 
