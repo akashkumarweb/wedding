@@ -24,7 +24,8 @@ export const venue = {
   note: 'Mehndi, Haldi and Puja Matkor venue',
   mapEmbed:
     'https://www.google.com/maps?q=Pushpanil%20Bhavan%2C%20phase%202%2C%20Gopal%20Nagar%20Rd%2C%20Machabollaram%2C%20Secunderabad%2C%20Telangana%20500010%2C%20India&output=embed',
-  directionsUrl: 'https://maps.app.goo.gl/PDTLh89P14Uehijq9',
+  directionsUrl:
+    'https://www.google.com/maps/search/?api=1&query=Pushpanil%20Bhavan%2C%20Phase%202%2C%20Gopal%20Nagar%20Rd%2C%20Machabollaram%2C%20Secunderabad%2C%20Telangana%20500010%2C%20India',
 }
 
 export const weddingVenue = {
@@ -33,8 +34,9 @@ export const weddingVenue = {
     'GFHQ+733, Kompally, NH 44, Opposite Asian Cineplanet Multiplex, Secunderabad, Telangana 500100, India',
   note: 'Wedding ceremony venue',
   mapEmbed:
-    'https://www.google.com/maps?q=GFHQ%2B733%2C%20Kompally%2C%20NH%2044%2C%20Opposite%20Asian%20Cineplanet%20Multiplex%2C%20Secunderabad%2C%20Telangana%20500100%2C%20India&output=embed',
-  directionsUrl: 'https://maps.app.goo.gl/ATXJBVmCEDTHLDDM9',
+    'https://www.google.com/maps?q=PSR%20Convention%20Center%2C%20GFHQ%2B733%2C%20Kompally%2C%20NH%2044%2C%20Opposite%20Asian%20Cineplanet%20Multiplex%2C%20Secunderabad%2C%20Telangana%20500100%2C%20India&output=embed',
+  directionsUrl:
+    'https://www.google.com/maps/search/?api=1&query=PSR%20Convention%20Center%2C%20GFHQ%2B733%2C%20Kompally%2C%20NH%2044%2C%20Opposite%20Asian%20Cineplanet%20Multiplex%2C%20Secunderabad%2C%20Telangana%20500100%2C%20India',
 }
 
 export type WeddingEvent = {
