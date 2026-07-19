@@ -13,7 +13,7 @@ export const contact = {
 
 export const rsvp = {
   label: 'RSVP',
-  url: import.meta.env.VITE_RSVP_URL ?? '#rsvp',
+  url: process.env.NEXT_PUBLIC_RSVP_URL ?? '#rsvp',
   note: 'Kindly confirm your attendance by 15 June 2026',
 }
 

@@ -1,3 +1,5 @@
+'use client'
+
 import { Navbar } from './components/Navbar'
 import { Hero3D } from './components/Hero3D'
 import { SaveTheDate } from './components/SaveTheDate'
@@ -8,25 +10,21 @@ import { Footer } from './components/Footer'
 import { GrainOverlay } from './components/ui/GrainOverlay'
 import { MarqueeRibbon } from './components/ui/MarqueeRibbon'
 
-function App() {
+export function HomePage() {
   return (
-    <>
-      <div>
-        <GrainOverlay />
-        <Navbar />
-        <main>
-          <Hero3D />
-          <MarqueeRibbon />
-          <SaveTheDate />
-          <EventCardsGrid />
-          <OurStory />
-          <MarqueeRibbon />
-          <Venue />
-        </main>
-        <Footer />
-      </div>
-    </>
+    <div>
+      <GrainOverlay />
+      <Navbar />
+      <main>
+        <Hero3D />
+        <MarqueeRibbon />
+        <SaveTheDate />
+        <EventCardsGrid />
+        <OurStory />
+        <MarqueeRibbon />
+        <Venue />
+      </main>
+      <Footer />
+    </div>
   )
 }
-
-export default App

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import { weddingDate } from '../data/wedding'
 
@@ -21,7 +21,7 @@ function getTimeLeft(target: Date): TimeLeft | null {
 }
 
 export function Countdown() {
-  const target = new Date(`${weddingDate}T09:00:00`)
+  const target = useMemo(() => new Date(`${weddingDate}T09:00:00`), [])
   const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(() => getTimeLeft(target))
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export function Countdown() {
     tick()
     const id = setInterval(tick, 1000)
     return () => clearInterval(id)
-  }, [])
+  }, [target])
 
   if (!timeLeft) return null
 

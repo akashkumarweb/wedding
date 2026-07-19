@@ -7,6 +7,7 @@ const links = [
   { href: '#save-the-date', label: 'Invitation' },
   { href: '#events', label: 'Events' },
   { href: '#venue', label: 'Venue' },
+  { href: '/gallery', label: 'Gallery' },
 ]
 
 export function Navbar() {
