@@ -105,11 +105,6 @@ export function PhotographerDashboard() {
         item.file,
         item.file.type,
         (progress) => updateProgress(item.id, 5 + progress * 0.72),
-        {
-          originalFilename: image.originalFilename,
-          checksum,
-          folderPath: item.path.includes('/') ? item.path.split('/').slice(0, -1).join('/') : '',
-        },
       )
       const preview = await createPreview(item.file)
       await putFile(previewUrl, preview, 'image/webp', (progress) => updateProgress(item.id, 78 + progress * 0.18))
@@ -210,15 +205,11 @@ function putFile(
   file: Blob,
   contentType: string,
   onProgress: (progress: number) => void,
-  metadata?: Record<string, string>,
 ) {
   return new Promise<void>((resolve, reject) => {
     const xhr = new XMLHttpRequest()
     xhr.open('PUT', url)
     xhr.setRequestHeader('content-type', contentType)
-    Object.entries(metadata ?? {}).forEach(([key, value]) => {
-      xhr.setRequestHeader(`x-amz-meta-${key}`, value)
-    })
     xhr.upload.onprogress = (event) => event.lengthComputable && onProgress(event.loaded / event.total)
     xhr.onload = () => (xhr.status >= 200 && xhr.status < 300 ? resolve() : reject(new Error('Upload failed')))
     xhr.onerror = () => reject(new Error('Upload failed'))
