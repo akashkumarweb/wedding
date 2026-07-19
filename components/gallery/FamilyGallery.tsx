@@ -19,10 +19,17 @@ export function FamilyGallery() {
   const [images, setImages] = useState<ImageItem[]>([])
   const [cursor, setCursor] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
   const [active, setActive] = useState<number | null>(null)
 
   useEffect(() => {
-    fetch('/api/gallery/albums').then((r) => r.json()).then((d) => setAlbums(d.albums ?? []))
+    fetch('/api/gallery/albums')
+      .then(async (response) => {
+        if (!response.ok) throw new Error('Unable to load albums')
+        return response.json()
+      })
+      .then((d) => setAlbums(d.albums ?? []))
+      .catch(() => setError('Unable to load albums'))
   }, [])
 
   const album = useMemo(() => albums.find((item) => item.id === albumId), [albums, albumId])
@@ -37,11 +44,18 @@ export function FamilyGallery() {
   async function loadImages(id = albumId, next = cursor, replace = false) {
     if (!id || loading) return
     setLoading(true)
-    const response = await fetch(`/api/gallery/images?albumId=${id}&limit=40${next ? `&cursor=${next}` : ''}`)
-    const data = await response.json()
-    setImages((items) => replace ? data.items : [...items, ...data.items])
-    setCursor(data.nextCursor)
-    setLoading(false)
+    setError('')
+    try {
+      const response = await fetch(`/api/gallery/images?albumId=${id}&limit=40${next ? `&cursor=${next}` : ''}`)
+      if (!response.ok) throw new Error('Unable to load photographs')
+      const data = await response.json()
+      setImages((items) => replace ? data.items : [...items, ...data.items])
+      setCursor(data.nextCursor)
+    } catch {
+      setError('Unable to load photographs')
+    } finally {
+      setLoading(false)
+    }
   }
 
   async function downloadOriginal(image: ImageItem) {
@@ -91,6 +105,8 @@ export function FamilyGallery() {
             {!albums.length && <p className="glass-luxury rounded-[1.25rem] p-8">No published albums yet.</p>}
           </section>
         )}
+
+        {error && <p className="glass-luxury mt-6 rounded-[1.25rem] p-5 text-maroon" role="alert">{error}</p>}
 
         {albumId && (
           <>

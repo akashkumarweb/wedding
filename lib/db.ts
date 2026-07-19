@@ -146,7 +146,7 @@ export async function listImages(input: { albumId?: string; cursor?: string; lim
     `
     select * from images
     where ($1::uuid is null or album_id = $1)
-      and ($2::text is null or id > $2)
+      and ($2::uuid is null or id > $2)
       and ($3::boolean or (published and upload_status = 'complete'))
       and ($4::text is null or original_filename ilike '%' || $4 || '%')
     order by id asc
