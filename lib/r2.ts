@@ -4,6 +4,11 @@ import { requireEnv } from './env'
 
 let client: S3Client | undefined
 
+function cleanMetadata(metadata?: Record<string, string>) {
+  const entries = Object.entries(metadata ?? {}).filter(([, value]) => value.length > 0)
+  return entries.length ? Object.fromEntries(entries) : undefined
+}
+
 export function r2Client() {
   if (!client) {
     client = new S3Client({
@@ -30,7 +35,7 @@ export async function signedPutUrl(
       Bucket: requireEnv('R2_BUCKET_NAME'),
       Key: key,
       ContentType: contentType,
-      Metadata: metadata,
+      Metadata: cleanMetadata(metadata),
     }),
     { expiresIn: 60 * 10 },
   )
